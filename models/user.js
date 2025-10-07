@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     surname: DataTypes.STRING,
     age: DataTypes.INTEGER,
-    login: DataTypes.STRING,
+    email: DataTypes.STRING,
     password: DataTypes.STRING,
     attempts: {
       type: DataTypes.INTEGER,
@@ -35,6 +35,14 @@ module.exports = (sequelize, DataTypes) => {
     blockedTime: {
       type: DataTypes.INTEGER,
       defaultValue: -1
+    },
+    isVerified: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
+    verificationToken: {
+      type: DataTypes.STRING,
+      allowNull: true
     }
   }, {
     sequelize,
